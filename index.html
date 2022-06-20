@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">	
+	<head>
+		<title>A Simple Dice Game</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1">		
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/style.css" />
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	</head>	
+	<body>	
+
+	<div id="wrapper">
+		<header>
+            <h3>Wanna test your chance?<br> So let's give it a try and do dice!</h3>
+
+		</header>
+			<main>
+				<section>
+                    <h2 id="winnerMessage"></h2>
+					<div class="grid_boxes">
+    					<div class="player-box">
+							<h2 class="box_color">Player 1</h2><br/><br/>
+                            <img id="dice1" src="css/images/4.png" alt="dice1">
+                            <img id="dice2" src="css/images/6.png" alt="dice2">
+						</div>
+    					<div class="box_content box2">
+                            <h2 class="box_color">Score</h2>
+                            <div class="box_score">
+                                <h3>Player 1</h3>
+                                <ul>
+                                    <li id="currentScoreP1">Current Score:</li>
+                                    <li id="totalScoreP1">Total Score:</li>
+                                </ul>
+                                <h3>Player 2</h3>
+                                <ul>
+                                    <li id="currentScoreP2">Current Score:</li>
+                                    <li id="totalScoreP2">Total Score:</li>
+                                </ul>
+                            </div>
+						</div>
+    					<div class="player-box">
+							<h2 class="box_color">Player 2</h2><br/><br/>
+                            <img id="dice3" src="css/images/ai_dice3.png" alt="dice3">
+                            <img id="dice4" src="css/images/ai_dice5.png" alt="dice4">
+                        </div>
+                    </div>
+                    <button type="button" id="btn-roll" class="button"> Play Game </button>
+                    <button class="button" onClick="window.location.reload();">Reset Game</button>
+                </section>	
+                
+                <button class="accordion">How to Play</button>
+                <div class="panel">
+                    <ul>
+                    <li class="space_li">- The game consists of three rounds. The player with the highest score is the winner.</li>
+                    <li class="space_li">- The player will click on the "Play game" button for the dice to be rolled.</li>
+                    <li class="space_li">- After three rounds, the winner will be introduced to the screen.</li>
+                    <li class="space_li">- To restart a new game, the player must click on the "Reset Game" button.</li>
+                </ul>
+                </div>
+
+                <button class="accordion">Score Rules</button>
+                <div class="panel">
+                    <ul>
+                        <li class="space_li">- If any of the players two dice comes up as a 1 then the score for that round for the
+                            player is 0. eg: if the player rolls a 6 and 1, they get a score of 0.</li>
+                        <li class="space_li">- If the player rolls a pair of the same numbers then the players score is the total of the
+                            two dice times 2. eg: if he player rolls 5 and 5, they get a score of (5+5)*2=20</li>
+                        <li class="space_li">- If the player rolls any other combination of dice other than the ones mentioned above
+                            then the players score is the total value of the two dice, eg: player rolls a 3 and 2, player gets a score of 3+2=5</li>
+                    </ul>
+                </div>
+
+			</main>
+
+				
+		<footer>
+			<small>Copyleft &copy; Dice Game</small>
+		</footer>
+	</div>
+    <script src="script/script.js"></script>
+	</body>	
+</html>
