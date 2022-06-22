@@ -132,11 +132,11 @@ footer {
 /* BUTTON ADJUSMENT */
 .button {
   background: var(--main-color);
-  background-image: -webkit-linear-gradient(top, #7e4be2, #4b13bd);
-  background-image: -moz-linear-gradient(top, #7e4be2, #4b13bd);
-  background-image: -ms-linear-gradient(top, #7e4be2, #4b13bd);
-  background-image: -o-linear-gradient(top, #7e4be2, #4b13bd);
-  background-image: linear-gradient(to bottom, #7e4be2, #4b13bd);
+  background-image: -webkit-linear-gradient(top, $button-shade, $button-color);
+  background-image: -moz-linear-gradient(top, $button-shade, $button-color);
+  background-image: -ms-linear-gradient(top, $button-shade, $button-color);
+  background-image: -o-linear-gradient(top, $button-shade, $button-color);
+  background-image: linear-gradient(to bottom, $button-shade, $button-color);
   -webkit-border-radius: 10;
   -moz-border-radius: 10;
   border-radius: 10px;
@@ -147,17 +147,17 @@ footer {
 }
 
 .button:hover {
-  background: #4b13bd;
-  background-image: -webkit-linear-gradient(top, #4b13bd, #7e4be2);
-  background-image: -moz-linear-gradient(top, #4b13bd, #7e4be2);
-  background-image: -ms-linear-gradient(top, #4b13bd, #7e4be2);
-  background-image: -o-linear-gradient(top, #4b13bd, #7e4be2);
-  background-image: linear-gradient(to bottom, #4b13bd, #7e4be2);
+  background: $button-color;
+  background-image: -webkit-linear-gradient(top, $button-color, $button-shade);
+  background-image: -moz-linear-gradient(top, $button-color, $button-shade);
+  background-image: -ms-linear-gradient(top, $button-color, $button-shade);
+  background-image: -o-linear-gradient(top, $button-color, $button-shade);
+  background-image: linear-gradient(to bottom, $button-color, $button-shade);
   text-decoration: none;
 }
 
 /* ACCORDING ADJUSMENT */
-.accordion {
+.dropDown {
   background-color: #7D4BE2;
   color: #ffffff;
   font-size: 18px;
@@ -170,7 +170,7 @@ footer {
   transition: 0.4s;
 }
 
-.active, .accordion:hover {
+.active, .dropDown:hover {
   background-color: #5f2bc7;
 }
 

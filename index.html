@@ -4,7 +4,7 @@
 		<title>A Simple Dice Game</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1">		
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="styles/styles.css" />
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	</head>	
 	<body>	
@@ -20,8 +20,8 @@
 					<div class="grid_boxes">
     					<div class="player-box">
 							<h2 class="box_color">Player 1</h2><br/><br/>
-                            <img id="dice1" src="css/images/4.png" alt="dice1">
-                            <img id="dice2" src="css/images/6.png" alt="dice2">
+                            <img id="dice1" src="styles/images/4.png" alt="dice1">
+                            <img id="dice2" src="styles/images/6.png" alt="dice2">
 						</div>
     					<div class="box_content box2">
                             <h2 class="box_color">Score</h2>
@@ -40,15 +40,15 @@
 						</div>
     					<div class="player-box">
 							<h2 class="box_color">Player 2</h2><br/><br/>
-                            <img id="dice3" src="css/images/ai_dice3.png" alt="dice3">
-                            <img id="dice4" src="css/images/ai_dice5.png" alt="dice4">
+                            <img id="dice3" src="styles/images/ai_dice3.png" alt="dice3">
+                            <img id="dice4" src="styles/images/ai_dice5.png" alt="dice4">
                         </div>
                     </div>
                     <button type="button" id="btn-roll" class="button"> Play Game </button>
                     <button class="button" onClick="window.location.reload();">Reset Game</button>
                 </section>	
                 
-                <button class="accordion">How to Play</button>
+                <button class="dropDown">How to Play</button>
                 <div class="panel">
                     <ul>
                     <li class="space_li">- The game consists of three rounds. The player with the highest score is the winner.</li>
@@ -58,7 +58,7 @@
                 </ul>
                 </div>
 
-                <button class="accordion">Score Rules</button>
+                <button class="dropDown">Score Rules</button>
                 <div class="panel">
                     <ul>
                         <li class="space_li">- If any of the players two dice comes up as a 1 then the score for that round for the

@@ -8,10 +8,21 @@ $gray: rgb(168, 168, 168);
 
 $dark-color: #242424;
 $light-color: rgb(245, 245, 245);
-$code-color: rgb(233, 233, 233);
+$button-color: #5D0134;
+$button-shade: #8B018F;
 $bad-color: rgb(183, 118, 118);
 $navy-color: rgb(9, 0, 69);
 $gold-color: gold;
+
+@mixin text-shadow ($color1, $color2) {
+
+	text-shadow: 1px 1px 0px $color1, 3px 3px 0px $color2;
+}
+
+@mixin box-forming ($color,$radius,$thickness,$kind){
+border: $kind $thickness $color;
+border-radius: $radius;
+}
 
 html {
 	box-sizing: border-box;
@@ -26,27 +37,33 @@ html {
 
 body {
 	margin: 0px;
-	background-color: $light-color;
+	background-color: $dark-color;
 
 }
+header {
+	height: 200px;
+	width: 100%;
+	background-image: url(images/background.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+  }
 
 header h3 {
 	margin: 0;
 	margin-top: 10px;
 	line-height: 1;
-	text-shadow: 1px 1px 0px var(--light-color), 3px 3px 0px var(--main-color);
+	@include text-shadow($light-color,$main_color );
 	font-size: 40px;
 	font-weight: bold;
 	color: var(--navy-color);
 	padding: 0 100px;
 	line-height: 80px;
 	text-align: center;
-}
+	
+   
+	}
 
-header {
-	height: 150px;
-	width: 100%;
-}
 
 #winnerMessage {
 	font-size: 32px;
@@ -82,11 +99,10 @@ footer {
 }
 
 .player-box {
-	color: var(--dark-color);
-	background-color: var(--light-color);
-	border: double 5px var(--main-color);
-	border-radius: 30%;
-	box-shadow: 2px 2px 2px 5px var(--gold-color);
+	color: $dark-color;
+	background-color: $gray;
+	@include box-forming($main_color,30% ,5px ,double);
+	@include text-shadow($dark-color,$gold-color );
 	font-size: 18px;
 	text-align: center;
 	padding: 20px;
@@ -130,10 +146,13 @@ footer {
 	-webkit-border-radius: 10;
 	-moz-border-radius: 10;
 	border-radius: 10px;
+	@include box-forming($light-color,10% ,2px ,solid);
 	color: #ffffff;
 	font-size: 20px;
 	padding: 10px 20px 10px 20px;
 	text-decoration: none;
+	margin-left: 10px;
+	box-shadow: 2px 2px 2px silver;
   }
   
   .button:hover {
@@ -144,11 +163,14 @@ footer {
 	background-image: -o-linear-gradient(top, $button-color, $button-shade);
 	background-image: linear-gradient(to bottom, $button-color, $button-shade);
 	text-decoration: none;
+	box-shadow: 2px 2px 2px 2px goldenrod;
+
   }
   
 .dropDown {
-	background-color: $main_color;
-	color: $light-color;
+	
+	background-color: $bad-color;
+	color: $dark-color;
 	font-size: 18px;
 	cursor: pointer;
 	padding: 18px;
@@ -157,11 +179,16 @@ footer {
 	border: none;
 	outline: none;
 	transition: 0.4s;
+	@include box-forming($light-color,10% ,3px ,solid);
+	font-size: 20px;
+	font-weight: bold;
+
 }
 
 .active,
 .dropDown:hover {
 	background-color: $main_color;
+	color: $light-color;
 }
 
 .panel {

@@ -86,7 +86,7 @@ function rollDices(){
 document.querySelector("button").addEventListener("click", rollDices);
 
 
-var acc = document.getElementsByClassName("accordion");
+var acc = document.getElementsByClassName("dropDown");
 var i;
 
 for (i = 0; i < acc.length; i++) {
