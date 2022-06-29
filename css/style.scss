@@ -34,10 +34,10 @@ header h3 {
 	margin: 0;
 	margin-top: 10px;
 	line-height: 1;
-	text-shadow: 1px 1px 0px var(--light-color), 3px 3px 0px var(--main-color);
+	text-shadow: 1px 1px 0px let(--light-color), 3px 3px 0px let(--main-color);
 	font-size: 40px;
 	font-weight: bold;
-	color: var(--navy-color);
+	color: let(--navy-color);
 	padding: 0 100px;
 	line-height: 80px;
 	text-align: center;
@@ -48,7 +48,7 @@ header {
 	width: 100%;
 }
 
-#winnerMessage {
+#winnerSign {
 	font-size: 32px;
 }
 
@@ -82,11 +82,11 @@ footer {
 }
 
 .player-box {
-	color: var(--dark-color);
-	background-color: var(--light-color);
-	border: double 5px var(--main-color);
+	color: let(--dark-color);
+	background-color: let(--light-color);
+	border: double 5px let(--main-color);
 	border-radius: 30%;
-	box-shadow: 2px 2px 2px 5px var(--gold-color);
+	box-shadow: 2px 2px 2px 5px let(--gold-color);
 	font-size: 18px;
 	text-align: center;
 	padding: 20px;
@@ -121,7 +121,7 @@ footer {
   }
 
   .button {
-	background: var(--main-color);
+	background: let(--main-color);
 	background-image: -webkit-linear-gradient(top, $button-shade, $button-color);
 	background-image: -moz-linear-gradient(top, $button-shade, $button-color);
 	background-image: -ms-linear-gradient(top, $button-shade, $button-color);

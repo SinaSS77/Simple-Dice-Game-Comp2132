@@ -1,5 +1,7 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import "fonts.scss";
+
 
 $main_color: rgb(144, 1, 1);
 $main-color-transparent: rgba(96, 2, 2, 0.25);
@@ -8,6 +10,7 @@ $gray: rgb(168, 168, 168);
 
 $dark-color: #242424;
 $light-color: rgb(245, 245, 245);
+$light-color-transparent:rgba(245, 245, 245,0.3);
 $button-color: #5D0134;
 $button-shade: #8B018F;
 $bad-color: rgb(183, 118, 118);
@@ -26,6 +29,7 @@ border-radius: $radius;
 
 html {
 	box-sizing: border-box;
+	font-size: 20px;
 }
 
 * {
@@ -49,26 +53,47 @@ header {
 	background-position: center;
   }
 
-header h3 {
-	margin: 0;
-	margin-top: 10px;
-	line-height: 1;
-	@include text-shadow($light-color,$main_color );
-	font-size: 40px;
-	font-weight: bold;
-	color: var(--navy-color);
-	padding: 0 100px;
-	line-height: 80px;
-	text-align: center;
-	
-   
+  h2{
+	font-family: 'abril_fatfaceregular';
+
+  }
+  h3{
+	font-family: 'abhaya_libreregular';
+  }
+  li{
+	font-family: 'playfair_displayitalic';
+
+  }
+header{
+	h3{
+		margin: 0;
+		margin-top: 10px;
+		line-height: 1;
+		@include text-shadow($light-color,$main_color );
+		font-size: 2rem;
+		font-weight: bold;
+		color: let(--navy-color);
+		padding: 0 100px;
+		line-height: 80px;
+		text-align: center;
+		font-family: 'josefin_sansbold';
+
+		
+	   
+		}
 	}
 
 
-#winnerMessage {
-	font-size: 32px;
-}
 
+button{
+
+span{
+	font-size: 1rem;
+	font-family: 'fin_serif_displayitalic';
+
+
+}
+}
 
 main {
 	margin: 5px 50px 20px 50px;
@@ -90,6 +115,17 @@ footer {
 	text-align: center;
 	color: $light-color;
 }
+footer{
+	h3{
+		color: $second_color;
+		
+
+	}
+	h2{
+		color: $bad-color;
+
+	}
+}
 
 #wrapper {
 	display: flex;
@@ -106,6 +142,8 @@ footer {
 	font-size: 18px;
 	text-align: center;
 	padding: 20px;
+	height: fit-content;
+	min-height: 350px;
   }
   
   .box_score {
@@ -137,7 +175,7 @@ footer {
   }
 
   .button {
-	background: var(--main-color);
+	background: let(--main-color);
 	background-image: -webkit-linear-gradient(top, $button-shade, $button-color);
 	background-image: -moz-linear-gradient(top, $button-shade, $button-color);
 	background-image: -ms-linear-gradient(top, $button-shade, $button-color);
@@ -201,4 +239,122 @@ footer {
 
 .space_li {
 	margin-bottom: 15px;
+}
+
+#winnerSign{
+	color: #5C0104;
+	background-color:$light-color-transparent ;
+	font-size: 2.5rem;
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+	html{
+	font-size:17px;
+	}
+header{
+	h3{
+		font-size: 1.7rem;
+		padding: 0 50px;
+	}
+}
+
+.box_score {
+	color: white;
+	font-size: 1rem;
+	text-align: left;
+	padding-left: 5px;
+
+	ul{
+		padding-left: 2px;
+	}
+  }
+
+  .button {
+	margin-top: 50px;
+  }
+
+}
+@media screen and (max-width: 600px) {
+	html{
+	font-size:16px;
+	}
+header{
+	h3{
+		font-size: 1rem;
+		padding: 0 10px;
+	}
+}
+main {
+	margin: 5px 10px;
+	padding: 10px;
+	flex: 1;
+}
+section{
+	margin: 2px;
+	padding: 2px;
+}
+.box_score {
+	color: white;
+	font-size: 1rem;
+	text-align: left;
+	padding-left: 5px;
+
+	ul{
+		padding-left: 2px;
+	}
+  }
+
+  .box_scoreTitle{
+	font-size: 1rem;
+}
+
+  .grid_boxes{
+	padding: 0px;
+	margin: 0px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto auto;
+	// grid-auto-rows: 350px;
+	grid-gap: 10px;
+
+  }
+  
+  .box1 {
+	grid-area: 1/1/2/2;
+  }
+  
+  .box2 {
+	grid-area: 2/1/3/3;
+
+	h2{
+		display: none;
+	}
+  }
+  
+  .box3 {
+	grid-area: 1/2/2/3;
+  }
+img{
+	width: 70px;
+}
+.player-box {
+	height: fit-content;
+	min-height: 200px;
+	padding: 10px;
+	border-radius: 20%;
+  }
+  .button {
+	margin-top: 10px;
+	margin-bottom: 5px;
+  }
+  .dropDown{
+	font-size: 1rem;
+	span{
+		font-size: 0.7rem;
+	}
+  }
+  #winnerSign{
+	font-size: 1.3rem;
+  }
+
 }

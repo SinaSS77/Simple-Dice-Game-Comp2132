@@ -2,7 +2,7 @@ const currentScoreP1    = document.getElementById("currentScoreP1");
 const currentScoreP2    = document.getElementById("currentScoreP2");
 const totalScoreP1      = document.getElementById("totalScoreP1");
 const totalScoreP2      = document.getElementById("totalScoreP2");
-const winnerMessage     = document.getElementById("winnerMessage");
+const winnerSign     = document.getElementById("winnerSign");
 
 let p1TotalScore = 0;
 let p2TotalScore = 0;
@@ -14,28 +14,28 @@ function rollDices(){
   let p1CurrentScore = "";
   let p2CurrentScore = "";
 
-    var rand1 = Math.floor(Math.random()*6)+1;
-    var randImage1Path = "css/images/" + rand1 + ".png";
+    let rand1 = Math.floor(Math.random()*6)+1;
+    let randImage1Path = "css/images/" + rand1 + ".png";
     
-    var rand2 = Math.floor(Math.random()*6)+1;
-    var randImage2Path = "css/images/" + rand2 + ".png";
+    let rand2 = Math.floor(Math.random()*6)+1;
+    let randImage2Path = "css/images/" + rand2 + ".png";
     
-    var rand3 = Math.floor(Math.random()*6)+1;
-    var randImage3Path = "css/images/ai_dice" + rand3 + ".png";
+    let rand3 = Math.floor(Math.random()*6)+1;
+    let randImage3Path = "css/images/ai_dice" + rand3 + ".png";
     
-    var rand4 = Math.floor(Math.random()*6)+1;
-    var randImage4Path = "css/images/ai_dice" + rand4 + ".png";
+    let rand4 = Math.floor(Math.random()*6)+1;
+    let randImage4Path = "css/images/ai_dice" + rand4 + ".png";
     
-    var dice1 = document.querySelectorAll("img")[0];
+    let dice1 = document.querySelectorAll("img")[0];
     dice1.setAttribute("src", randImage1Path);
     
-    var dice2 = document.querySelectorAll("img")[1];
+    let dice2 = document.querySelectorAll("img")[1];
     dice2.setAttribute("src", randImage2Path);
     
-    var dice3 = document.querySelectorAll("img")[2];
+    let dice3 = document.querySelectorAll("img")[2];
     dice3.setAttribute("src", randImage3Path);
     
-    var dice4 = document.querySelectorAll("img")[3];
+    let dice4 = document.querySelectorAll("img")[3];
     dice4.setAttribute("src", randImage4Path);
 
     if(rand1 === 1){
@@ -74,11 +74,14 @@ function rollDices(){
     if(roundCounter >= 3){
       document.getElementById("btn-roll").disabled = true;
       if(p1TotalScore > p2TotalScore){
-        winnerMessage.innerHTML = `🎉 Player 1 is the Winner! 🎉`;
+        winnerSign.innerHTML = `Game Over!<br>`;
+        winnerSign.innerHTML += `Player 1 Won The Game`;
       }else if(p2TotalScore > p1TotalScore){
-        winnerMessage.innerHTML = `🎉 Player 2 is the Winner! 🎉`;
-      }else{
-        winnerMessage.innerHTML = `😂 It's a Draw! 😂`;
+        winnerSign.innerHTML = `Game Over!<br>`;
+        winnerSign.innerHTML += `Player 2 Won The Game`; 
+           }else{
+            winnerSign.innerHTML = `Game Over!<br>`;
+            winnerSign.innerHTML += `The Game Is Draw!`; 
       }
     }
 }
@@ -86,13 +89,13 @@ function rollDices(){
 document.querySelector("button").addEventListener("click", rollDices);
 
 
-var acc = document.getElementsByClassName("dropDown");
-var i;
+let acc = document.getElementsByClassName("dropDown");
+let i;
 
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     this.classList.toggle("active");
-    var panel = this.nextElementSibling;
+    let panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
     } else {
